@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TopNavigation from "./TopNavigation";
 import Sidebar from "./Sidebar";
 import Home from "./Home";
-import NewsPage from "./NewsPage";
-import NewsArticlePage from "./NewsArticlePage";
 import Guides from "./Guides";
 import Encyclopedia from "./Encyclopedia";
 import Characters from "./encyclopedia/Characters";
@@ -18,7 +16,7 @@ import "./css/Characters-Skills.css";
 import "./css/Skills.css";
 
 const App = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 767);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 1600);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -26,7 +24,7 @@ const App = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSidebarOpen(window.innerWidth > 767);
+      setIsSidebarOpen(window.innerWidth > 1600);
     };
 
     window.addEventListener("resize", handleResize);
@@ -50,8 +48,6 @@ const App = () => {
                 path="/"
                 element={<Home isSidebarOpen={isSidebarOpen} />}
               />
-              <Route exact path="/news" element={<NewsPage />} />
-              <Route path="/news/:id" element={<NewsArticlePage />} />
               <Route path="/guides" element={<Guides />} />
               <Route path="/encyclopedia" element={<Encyclopedia />} />
               <Route path="/encyclopedia/characters" element={<Characters />} />

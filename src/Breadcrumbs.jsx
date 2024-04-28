@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Breadcrumb = ({ location }) => {
   const pathnames = location.pathname
     .split("/")
-    .filter((x) => x && x !== "new-Chrono-Guide"); // Filter out empty strings and the repository name
+    .filter((x) => x && x !== "Chrono-Guide-Vercel-Patch-P"); // Filter out empty strings and the repository name
 
   const capitalizeWords = (str) => {
     return str.replace(/\b\w/g, (match) => match.toUpperCase());
