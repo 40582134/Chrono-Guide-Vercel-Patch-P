@@ -15,6 +15,16 @@
       var redirectUrl = url + '/' + path + (query ? '?' + query : '') + hash;
       window.location.replace(redirectUrl);
     </script>
+    <script>
+  (function() {
+    var redirectPath = window.location.pathname.replace(/\/Chrono-Guide-Vercel-Patch-P\//, '');
+    var basePath = '/Chrono-Guide-Vercel-Patch-P';
+
+    if (redirectPath !== '/' && redirectPath !== '/index.html') {
+      window.history.replaceState(null, null, basePath + '/#' + redirectPath);
+    }
+  })();
+</script>
   </head>
   <body></body>
 </html>
