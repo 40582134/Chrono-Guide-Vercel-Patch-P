@@ -35,7 +35,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Chrono-Guide-Vercel-Patch-P">
       <div className="flex flex-col h-screen">
         <TopNavigation toggleSidebar={toggleSidebar} />
         <hr className="horizontal-divider" />
